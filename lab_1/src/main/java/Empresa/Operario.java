@@ -1,6 +1,6 @@
-package desglose;
+package Empresa;
 
-public class Operario {
+public class Operario extends Empleados{
 
     String area;
     String puesto;

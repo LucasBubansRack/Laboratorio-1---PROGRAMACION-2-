@@ -1,6 +1,6 @@
-package desglose;
+package Empresa;
 
-public class Vendedor {
+public class Vendedor extends Empleados{
     String medioVenta;
     double totalVentasMes;
     double sueldoBase = 30000.0;
