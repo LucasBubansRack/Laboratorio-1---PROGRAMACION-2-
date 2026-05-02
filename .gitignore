@@ -1,0 +1,7 @@
+# Ignorar la carpeta de configuración de IntelliJ
+.idea/
+*.iml
+
+# Ignorar archivos compilados de Java
+*.class
+target/
