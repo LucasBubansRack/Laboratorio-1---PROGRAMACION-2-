@@ -10,30 +10,43 @@ La aplicación también permitirá mostrar toda la información registrada y rea
  */
 package desglose;
 
-public class abstract Empleados {
+public abstract class Empleados {
+    // atributos protected para que las subclases los vean
+    protected int legajo;
+    protected String nombre;
+    protected String apellido;
+    protected Date fechaNacimiento;
+    protected String telefono;
+    protected String direccion;
+    protected String mail;
 
-    int legajo;
-    String nombre;
-    String apellido;
-    Date fechaNacimiento;
-    String telefono;
-    String direccion;
-    String mail;
+    public void Empleado();
 
-
-
-    public double abstract calcularSueldoBruto(){
-
+    // constructor para usar las subclases
+    public void Empleado(int legajo, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion, String mail){
+        this.legajo = legajo;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.telefono = telefono;
+        this.direccion = direccion;
+        this.mail = mail;
     }
 
-    public double calcularDescuentos(boolean Jubilacion, boolean PAMI, boolean ObraSoc){
-        if(){
+    public abstract double calcularSueldoBruto() // no lleva llaves porque la logica la pongo en cada hijo
 
-        }
+    public double calcularDescuentos(){
+        // todos descuentan el 19% (0.11 + 0.03 + 0.03 + 0.02)
+        return this.calcularSueldoBruto() * 0.19;
     }
-
+     // sueldoBruto - el descuento
     public double calcularSueldoNeto(){
+        return this.calcularSueldoBruto() - this.calcularDescuentos();
+    }
 
+    @Overide
+    public String toString(){
+        return "Legajo: " + legajo + " - Nombre: " + nombre + " " + apellido + "\nSueldo Neto: $" + calcularSueldoNeto();
     }
 
 }
