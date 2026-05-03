@@ -9,18 +9,18 @@ La aplicación debe permitir cargar cada empleado con sus datos (legajo, apellid
 La aplicación también permitirá mostrar toda la información registrada y realizar el calculo del sueldo neto para cada empleado aplicando los descuentos correspondientes (Jubilación 11%, PAMI 3%, Obra Social 3%, Cuota sindical 2%) para luego mostrarlo.
  */
 package Empresa;
+import java.util.Date;
 
 public abstract class Empleados {
-    // atributos protected para que las subclases los vean
-    protected int legajo;
-    protected String nombre;
-    protected String apellido;
-    protected Date fechaNacimiento;
-    protected String telefono;
-    protected String direccion;
-    protected String mail;
+    private int legajo;
+    private String nombre;
+    private String apellido;
+    private Date fechaNacimiento;
+    private String telefono;
+    private String direccion;
+    private String mail;
 
-    public void Empleados();
+    public Empleados() {}
 
     // constructor para usar las subclases
     public void Empleados(int legajo, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion, String mail){
@@ -70,19 +70,18 @@ public abstract class Empleados {
 
     public abstract double calcularSueldoBruto() // no lleva llaves porque la logica la pongo en cada hijo
 
-    public double calcularDescuentos(){
-        // todos descuentan el 19% (0.11 + 0.03 + 0.03 + 0.02)
+    public double calcularDescuentos() {
         return this.calcularSueldoBruto() * 0.19;
     }
 
-    // sueldoBruto - el descuento
-    public double calcularSueldoNeto(){
+    public double calcularSueldoNeto() {
         return this.calcularSueldoBruto() - this.calcularDescuentos();
     }
 
-    @Overide
-    public String toString(){
-        return "Legajo: " + getLegajo() + " - Nombre: " + getNombre() + " - Apellido" + getApellido() + "\nSueldo Neto: $" + calcularSueldoNeto();
+    @Override
+    public String toString() {
+        return "Legajo: " + legajo + " - Nombre: " + nombre + " " + apellido +
+                "\nSueldo Neto: $" + calcularSueldoNeto();
     }
 
 }
