@@ -7,11 +7,9 @@ public class Marketing extends Empleados{
     String horario;
     double sueldoFijo = 50000.0;
 
-
-    public Marketing(int legajo, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion, String mail, String horario) {
+    public Marketing(int legajo, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion, String mail,  String horario) {
         super(legajo, nombre, apellido, fechaNacimiento, telefono, direccion, mail);
         this.horario = horario;
-        this.sueldoFijo = sueldoFijo;
     }
 
     public String getHorario() {
@@ -37,6 +35,6 @@ public class Marketing extends Empleados{
 
     @Override
     public String toString() {
-        return super.toString() + ", Horario: " + horario + ", Sueldo Bruto: " + calcularSueldoBruto();
+        return super.toString() + "Horario: " + horario + "\nSueldo neto: " + calcularSueldoNeto();
     }
 }

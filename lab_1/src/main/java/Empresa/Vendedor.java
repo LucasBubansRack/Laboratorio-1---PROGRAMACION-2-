@@ -10,9 +10,15 @@ public class Vendedor extends Empleados{
 
 
 
-    public Vendedor(int legajo, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion, String mail, String medioVenta) {
+    public Vendedor(String medioVenta,  double totalVentasMes) {
+        this.medioVenta = medioVenta;
+        this.totalVentasMes = totalVentasMes;
+    }
+
+    public Vendedor(int legajo, String nombre, String apellido, Date fechaNacimiento, String telefono, String direccion, String mail, String medioVenta,  double totalVentasMes) {
         super(legajo, nombre, apellido, fechaNacimiento, telefono, direccion, mail);
         this.medioVenta = medioVenta;
+        this.totalVentasMes = totalVentasMes;
     }
 
     @Override
@@ -21,8 +27,8 @@ public class Vendedor extends Empleados{
         return (sueldoBase + sueldoComis);
     }
 
-    @Override
+   @Override
     public String toString() {
-        return super.toString() + "Medio Venta: " + medioVenta + "Total ventas mes: " + totalVentasMes + "Sueldo Base: " + sueldoBase + "Comision: " + sueldoBase*comision;
+        return super.toString() + "Medio Venta: " + medioVenta + "\nTotal ventas mes: " + totalVentasMes + "\nSueldo neto: " + calcularSueldoNeto() + "\nComision por Ventas: " + sueldoBase*comision;
     }
 }
