@@ -11,9 +11,9 @@ public class Main {
 
         //Scanner sc = new Scanner(System.in);
         //Scanner in = new Scanner(System.in);
-        Empleados[] empOper = new Empleados[1];
-        Empleados[] empMark = new Empleados[1];
-        Empleados[] empVend = new Empleados[1];
+        Empleados[] empOper = new Empleados[10];
+        Empleados[] empMark = new Empleados[2];
+        Empleados[] empVend = new Empleados[3];
 
 
         JOptionPane.showMessageDialog(null, "Iniciando empresa...");
