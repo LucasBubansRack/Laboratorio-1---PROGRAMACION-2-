@@ -145,5 +145,4 @@ public class Main {
 
         return new Vendedor(legajo, nombre, apellido, fechaNacimiento, telefono, direccion, mail, medioVenta, ventasDelMes);
     }
-
 }
